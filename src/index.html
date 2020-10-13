@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complement</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <header>
+        <div id="scoreCurr"></div>
+        <div id="scoreHigh"></div>
+    </header>
+    <main>
+        <svg viewBox="-500 -500 1000 1000" id="field">
+            <g id="stars"/>
+            <g id="targetWrapper">
+                <g id="target"/>
+            </g>
+            <g id="pts"/>
+            <g id="ship">
+                <g id="cannon0" transform="translate(-330, 0) scale(2)"/>
+                <g id="cannon1" transform="translate(0, -330) scale(2)"/>
+                <g id="cannon2" transform="translate(330, 0) scale(2)"/>
+                <g id="cannon3" transform="translate(0, 330) scale(2)"/>
+                <g id="hull">
+                    <path d="M0-400a400 400 0 0 1 0 800 400 400 0 0 1 0-800m0 30a370 370 0 0 0 0 740 370 370 0 0 0 0-740"/>
+                    <path d="M395-10l500-30v80l-500-30" transform="rotate(45)"/>
+                    <path d="M395-10l500-30v80l-500-30" transform="rotate(-45)"/>
+                    <path d="M395-10l500-30v80l-500-30" transform="rotate(135)"/>
+                    <path d="M395-10l500-30v80l-500-30" transform="rotate(-135)"/>
+                </g>
+            </g>
+            <g id="newGameCard" text-anchor="middle">
+                <rect x="-420" y="-250" width="840" height="500" fill="#333c"/>
+                <rect rx="10" x="-125" y="100" width="40" height="40"/>
+                <rect rx="10" x="-175" y="150" width="40" height="40"/>
+                <rect rx="10" x="-125" y="150" width="40" height="40"/>
+                <rect rx="10" x="-75" y="150" width="40" height="40"/>
+                <g fill="#ccc">
+                    <text y="126" x="-105">↑</text>
+                    <text y="176" x="-105">↓</text>
+                    <text y="178" x="-155">←</text>
+                    <text y="178" x="-55">→</text>
+                </g>
+                <text x="-35" y="20" transform="scale(3)">🖥️</text>
+                <text x="50" y="22" transform="scale(3)">📱</text>
+                <text x="40" y="115" transform="rotate(-30) scale(2)">👆</text>
+            </g>
+        </svg>
+    </main>
+    <footer>
+        <div id="lives">&nbsp;</div>
+    </footer>
+    <script src="game.js"></script>
+</body>
+</html>
