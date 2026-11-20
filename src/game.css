@@ -40,10 +40,30 @@ main {
     border-right-width: 0;
 }
 
+#field {
+    touch-action: none;
+}
+
 svg #hull {
     fill: slategray;
     stroke: darkslategray;
     stroke-width: 5;
+}
+
+svg #ship.gold #hull {
+    fill: goldenrod;
+    stroke: darkgoldenrod;
+}
+
+#hullInnerOutline {
+    display: none;
+}
+
+#ship.gold #hullInnerOutline {
+    display: inline;
+    fill: none;
+    stroke: goldenrod;
+    stroke-width: 8;
 }
 
 svg #zap path {

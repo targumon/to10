@@ -1,19 +1,15 @@
 {
   "name": "complement",
   "version": "0.1.0",
-  "description": "Complement to 10",
-  "main": "game.html",
+  "description": "Practice complements to 10 and 100",
   "scripts": {
     "watch": "parcel src/index.html",
-    "build": "parcel build src/index.html --no-source-maps && copyfiles -u 1 src/aud/*.mp3 dist",
-    "clean": "del dist\\* /q && rmdir /s /q .cache"
+    "build": "parcel build src/index.html --no-source-maps --public-url ./",
+    "clean": "node -e \"for (const dir of ['dist', '.parcel-cache']) require('node:fs').rmSync(dir, { recursive: true, force: true })\""
   },
   "author": "Amnon Sadeh",
   "license": "GNU GPLv3",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
-  },
-  "dependencies": {
-    "copyfiles": "^2.4.1"
+    "parcel": "^2.16.4"
   }
 }

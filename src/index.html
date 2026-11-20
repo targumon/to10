@@ -23,12 +23,31 @@
     </header>
     <main>
         <svg viewBox="-500 -500 1000 1000" id="field">
-            <g id="stars"/>
+            <defs>
+                <radialGradient id="warpGlow">
+                    <stop stop-color="#9bcaff" stop-opacity="0.5"/>
+                    <stop offset="0.25" stop-color="#4269c6" stop-opacity="0.35"/>
+                    <stop offset="1" stop-color="#070e28" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="starFade" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="140">
+                    <stop offset="0.25" stop-color="black"/>
+                    <stop offset="0.5" stop-color="#555"/>
+                    <stop offset="1" stop-color="white"/>
+                </radialGradient>
+                <mask id="starFadeMask" maskUnits="userSpaceOnUse"
+                    x="-1200" y="-1200" width="2400" height="2400">
+                    <rect x="-1200" y="-1200" width="2400" height="2400" fill="url(#starFade)"/>
+                </mask>
+            </defs>
+            <rect id="warpGlowLayer" x="-500" y="-500" width="1000" height="1000"
+                fill="url(#warpGlow)" opacity="0" aria-hidden="true"/>
+            <g id="stars" stroke="white" stroke-linecap="round" mask="url(#starFadeMask)" aria-hidden="true"/>
             <g id="targetWrapper">
                 <g id="target"/>
             </g>
             <g id="pts"/>
             <g id="ship">
+                <circle id="hullInnerOutline" r="354"/>
                 <g id="cannon0" transform="translate(-330, 0) scale(2)"/>
                 <g id="cannon1" transform="translate(0, -330) scale(2)"/>
                 <g id="cannon2" transform="translate(330, 0) scale(2)"/>
@@ -62,6 +81,6 @@
     <footer>
         <div id="lives">&nbsp;</div>
     </footer>
-    <script src="game.js"></script>
+    <script type="module" src="./game.js"></script>
 </body>
 </html>
