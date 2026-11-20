@@ -9,6 +9,9 @@
   },
   "author": "Amnon Sadeh",
   "license": "GNU GPLv3",
+  "engines": {
+    "node": "26.x"
+  },
   "devDependencies": {
     "parcel": "^2.16.4"
   }
