@@ -25,5 +25,5 @@ function initializeAnalytics() {
 initializeAnalytics()
 
 export function captureGameEvent(name, properties) {
-    window.posthog?.capture(name, { ...properties, site: 'to10' })
+    window.posthog?.capture(name, properties)
 }
