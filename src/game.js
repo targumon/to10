@@ -1,3 +1,4 @@
+import { captureGameEvent } from './analytics.js'
 import { nextChallenge, stageForScore } from './challenges.js'
 import {
     animateStars, clearRound, field, initializeView, ptsRender,
@@ -67,6 +68,7 @@ function startGame() {
     renderStage(stage.total)
     startRound()
     setStartCardVisible(false)
+    captureGameEvent('game_started')
 }
 
 function endGame() {
@@ -82,6 +84,7 @@ function endGame() {
             // Keep the session's high score even if it cannot be saved.
         }
     }
+    captureGameEvent('game_finished', { score, high_score: highScore })
 }
 
 function miss() {

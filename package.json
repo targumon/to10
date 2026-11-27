@@ -4,7 +4,7 @@
   "description": "Practice complements to 10 and 100",
   "scripts": {
     "watch": "parcel src/index.html",
-    "build": "parcel build src/index.html --no-source-maps --public-url ./",
+    "build": "parcel build src/index.html --no-source-maps --public-url ./ && node scripts/configure-analytics.mjs",
     "clean": "node -e \"for (const dir of ['dist', '.parcel-cache']) require('node:fs').rmSync(dir, { recursive: true, force: true })\""
   },
   "author": "Amnon Sadeh",
