@@ -1,8 +1,7 @@
-// Parcel inlines these two public variables when it builds the browser bundle.
 function initializeAnalytics() {
-    const key = process.env.POSTHOG_KEY
-    const host = process.env.POSTHOG_HOST
-    if (!key || !host) return
+    const config = window.__POSTHOG_CONFIG__
+    if (!config) return
+    const { key, host } = config
 
     let url
     try {
